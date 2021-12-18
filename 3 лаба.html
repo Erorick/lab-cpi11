@@ -1,0 +1,192 @@
+<! DOCTYPE html>
+	<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Таблица</title>
+	<style>
+	.okno2{
+		width: 300px;
+		height: 280px;
+		padding: 15px;
+		border: 3px solid black;
+		border-radius: 10px;
+		background-origin: 10px;
+		background-color:rgba(0, 0, 0, 0.5) ;
+	position: absolute;
+opacity:  0;
+pointer-events: all;
+transition: 0.5s all;
+top: 0;
+color: white;
+right: 0;
+left: 0;
+bottom: 0;
+margin: auto;nb
+	}
+
+	.okno{
+		width: 300px;
+		height: 280px;
+		padding: 15px;
+		border: 3px solid black;
+		border-radius: 10px;
+		background-origin: 10px;
+		background-color:rgba(0, 0, 0, 0.5) ;
+	position: absolute;
+opacity:  0;
+pointer-events: all;
+transition: 0.5s all;
+top: 0;
+color: white;
+right: 0;
+left: 0;
+bottom: 0;
+margin: auto;
+	}
+	
+	#tab{
+		border-collapse: collapse;
+
+	}
+.okno1{
+		width: 200px;
+		height: 100px;
+		padding: 15px;
+		border: 3px solid black;
+		border-radius: 10px;
+		background-origin: 10px;
+		background-color:rgba(0, 0, 0, 0.8) ;
+		position: absolute;
+		text-align: center;
+opacity:  0;
+pointer-events: all;
+transition: 0.5s all;
+top: 0; 
+right: 0;
+left: 0;
+bottom: 0;
+margin: auto;
+}	
+.okno.active{
+		opacity: 1;
+		pointer-events: all;
+		transition: 0.5s all;
+	}
+	.okno.none{
+		display: none;
+	}
+	.okno1.active{
+		opacity: 1;
+		pointer-events: all;
+		transition: 0.5s all;
+	}
+	.okno2.active{
+		opacity: 1;
+		pointer-events: all;
+		transition: 0.5s all;
+	}
+</style>
+
+</head>
+<body>
+	<p align="center"><strong >Таблица</strong></p>
+<table border="1" id="tab" width="100%">
+	<tr>
+		<td >ФИО</td>
+		<td>Группа</td>
+		<td>Почта</td>
+<td>Дата рождения</td>
+<td>Изменения</td>
+	</tr>
+		<tr>
+		<td>Андреев Егор Сергеевич</td>
+		<td>ЦПИ-11</td>
+		<td>egatank@yandex.ru</td>
+<td>07.12.2003</td>
+<td><button class="show">Изменить</button><br><button class="show1">Удалить</button>
+	</tr>   
+</table>
+<button class="show2">Добавить</button>
+<div class="okno2">
+<button class="hide2x">X</button>	
+<form><p> ФИО<br> <input type="text"></p>
+<p> Группа<br><input type="text"></p>
+<p> Почта <br><input type="text"></p>
+<p> Дата рождения <br><input type="text"></p></form>
+<button class="hide2d">Добавить</button>
+
+</div>
+	<div class="okno">
+<button class="hide">X</button>	
+<form><p> ФИО<br> <input type="text"></p>
+<p> Группа<br><input type="text"></p>
+<p> Почта <br><input type="text"></p>
+<p> Дата рождения <br><input type="text"></p></form>
+<button class="hidec">Изменить</button>
+
+</div>
+<div class="okno1">
+	<button class="hide1">X</button>		
+<p style="color:white">Вы действительно хотите удалить данные</p>
+<button class="hide1n">Нет</button><button class="hide1d">Да</button></div>
+
+
+	</body>
+	<script>
+let okno = document.querySelector('.okno');
+let okno1 = document.querySelector('.okno1');
+let okno2 = document.querySelector('.okno2');
+let show = document.querySelectorAll('.show');
+let hide = document.querySelector('.hide');
+let show1 = document.querySelectorAll('.show1');
+let hide1 = document.querySelector('.hide1');
+let show2 = document.querySelectorAll('.show2');
+let hide2x = document.querySelector('.hide2x');
+let hide2d = document.querySelector('.hide2d');
+let hidec = document.querySelector('.hidec');
+let hide1n = document.querySelector('.hide1n');
+let hide1d = document.querySelector('.hide1d');
+show.forEach((button)=>{
+button.addEventListener('click',(e)=>{
+	e.preventDefault();
+ okno.classList.add('active');
+})
+ });
+hide.addEventListener('click',()=>{
+okno.classList.remove('active');
+});
+show1.forEach((button)=>{
+button.addEventListener('click',(e)=>{
+	e.preventDefault();
+ okno1.classList.add('active');
+})
+ });
+hide1.addEventListener('click',()=>{
+okno1.classList.remove('active');
+});
+show2.forEach((button)=>{
+button.addEventListener('click',(e)=>{
+	e.preventDefault();
+ okno2.classList.add('active');
+ okno.classList.add('none')
+})
+ });
+hide2x.addEventListener('click',()=>{
+okno2.classList.remove('active');
+okno.classList.remove('none');
+});
+hide2d.addEventListener('click',()=>{
+okno2.classList.remove('active');
+okno.classList.remove('none');
+});
+hidec.addEventListener('click',()=>{
+okno.classList.remove('active');
+});
+hide1n.addEventListener('click',()=>{
+okno1.classList.remove('active');
+});
+hide1d.addEventListener('click',()=>{
+okno1.classList.remove('active');
+});
+	</script>
+	</html>

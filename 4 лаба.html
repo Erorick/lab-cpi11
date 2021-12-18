@@ -1,0 +1,117 @@
+<! DOCTYPE html>
+	<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Таблица</title>
+	<style>
+	.okno2{
+		width: 300px;
+		height: 280px;
+		padding: 15px;
+		border: 3px solid black;
+		border-radius: 10px;
+		background-origin: 10px;
+		background-color:rgba(0, 0, 0, 0.5) ;
+	position: absolute;
+opacity:  0;
+pointer-events: all;
+transition: 0.5s all;
+top: 0;
+color: white;
+right: 0;
+left: 0;
+bottom: 0;
+margin: auto;nb
+	}
+
+	.okno{
+		width: 300px;
+		height: 280px;
+		padding: 15px;
+		border: 3px solid black;
+		border-radius: 10px;
+		background-origin: 10px;
+		background-color:rgba(0, 0, 0, 0.5) ;
+	position: absolute;
+opacity:  0;
+pointer-events: all;
+transition: 0.5s all;
+top: 0;
+color: white;
+right: 0;
+left: 0;
+bottom: 0;
+margin: auto;
+	}
+	
+	#tab1{
+		border-collapse: collapse;
+
+	}
+.okno1{
+		width: 200px;
+		height: 100px;
+		padding: 15px;
+		border: 3px solid black;
+		border-radius: 10px;
+		background-origin: 10px;
+		background-color:rgba(0, 0, 0, 0.8) ;
+		position: absolute;
+		text-align: center;
+opacity:  0;
+pointer-events: all;
+transition: 0.5s all;
+top: 0; 
+right: 0;
+left: 0;
+bottom: 0;
+margin: auto;
+}	
+</style>
+
+</head>
+<body>
+	<p align="center"><strong >Таблица</strong></p>
+	<div id="table">
+<table border="1" id="tab1" width="100%">
+	<tr>
+		<td>№</td>
+		<td>ФИО</td>
+		<td>Группа</td>
+		<td>Почта</td>
+<td>Дата рождения</td>
+<td>Изменения</td>
+	</tr>
+	<tbody id="t">
+</tbody>
+</table>
+</div>
+<button id="buttonClick">Добавить</button>
+	</body>
+	<script>
+var counter = 1;
+buttonClick.addEventListener('click',function(e) {
+	var t = document.getElementById('t');
+	var row=t.insertRow();
+	var target = e.target;
+if (target.tagName = 'button') {
+	row.insertCell().innerHTML = counter;
+	counter++;
+}
+row.insertCell().innerHTML= "<input type='text' name='1'>";
+row.insertCell().innerHTML= "<input type='text' name='1'>";
+row.insertCell().innerHTML= "<input type='text' name='1'>";
+row.insertCell().innerHTML= "<input type='text' name='1'>";
+row.insertCell().innerHTML= "<input type='button' value='Удалить' class='del'>";
+var del = document.getElementsByClassName('del');
+  var str = document.querySelectorAll('#table tr');
+  for (var i = 0; i < del.length; i++) {
+  del[i].addEventListener('click', function(but) {
+      var trq = this.parentNode.parentNode;
+      trq.remove();
+    });
+  }
+})
+
+	</script>
+	</html>
